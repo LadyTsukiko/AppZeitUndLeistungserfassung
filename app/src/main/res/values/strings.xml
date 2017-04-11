@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Zeit- und Leistungserfassung</string>
+    <string name="project">Projekt
+    </string>
+    <string name="posten">Leistung</string>
+    <string-array name="country_arrays">
+        <item>Project1</item>
+        <item>The</item>
+        <item>other</item>
+        <item>Projects</item>
+        <item>names</item>
+        <item>to</item>
+        <item>choose</item>
+        <item>from</item>
+    </string-array>
+
+    <string-array name="posten_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
+</resources>
