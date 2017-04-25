@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
        //Get MitarbeiterId and PW out of the respective fields
         EditText editText = (EditText) findViewById(R.id.mitarbeiterId);
         String mitarbeiterId = editText.getText().toString();
-        editText = (EditText) findViewById(R.id.pw);
+        editText = (EditText) findViewById(R.id.pw );
         String pw = editText.getText().toString();
 
         //ToDo check if pw valid first
