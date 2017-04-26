@@ -20,4 +20,8 @@ public class ErfassungActivity extends AppCompatActivity {
 
 
     }
+
+    public void startClicked(){}
+    public void stopClicked(){}
+    public void pauseClicked(){}
 }

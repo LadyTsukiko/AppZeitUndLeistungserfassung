@@ -34,4 +34,12 @@
             android:ems="10"
             android:layout_marginTop="132dp" android:id="@+id/mitarbeiterId"
             android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/mitarbeiterId" android:layout_alignStart="@+id/mitarbeiterId"
+            android:layout_marginTop="69dp" android:id="@+id/errorView" android:layout_alignRight="@+id/mitarbeiterId"
+            android:layout_alignEnd="@+id/mitarbeiterId" android:textColor="@android:color/holo_red_dark"
+            android:textStyle="normal|bold" android:visibility="invisible" tools:text="@string/errormes"
+            android:text="@string/errormes"/>
 </RelativeLayout>

@@ -3,6 +3,7 @@
     <string name="project">Projekt
     </string>
     <string name="posten">Leistung</string>
+    <string name="errormes">Invalid password or username</string>
     <string-array name="country_arrays">
         <item>Project1</item>
         <item>The</item>
