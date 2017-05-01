@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,15 +96,22 @@ public class MainActivity extends AppCompatActivity {
         }
         }) {
 
-   /* @Override
+    @Override
     protected Map<String, String> getParams() {
         // Posting parameters to login url
         Map<String, String> params = new HashMap<String, String>();
-        params.put("email", name);
+        params.put("MitarbeiterID", name);
         params.put("password", pw);
 
         return params;
-        }*/
+        }
+
+        @Override
+        public Map<String, String> getHeaders() throws AuthFailureError {
+            HashMap<String, String> headers = new HashMap<String, String>();
+            headers.put("Content-Type", "text/html");
+            return headers;
+        }
 
         };
 
