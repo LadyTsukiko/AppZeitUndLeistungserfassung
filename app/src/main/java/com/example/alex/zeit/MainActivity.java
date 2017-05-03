@@ -22,6 +22,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private final String tag_string_req = "log_in_req";
+    private String mitarbeiterId;
+    private EditText editText;
 
     private static final String TAG = MainActivity.class.getSimpleName();
     boolean ret = false;
@@ -34,22 +36,25 @@ public class MainActivity extends AppCompatActivity {
 
     public  void okClicked (View view){
        //Get MitarbeiterId and PW out of the respective fields
-        EditText editText = (EditText) findViewById(R.id.mitarbeiterId);
-        String mitarbeiterId = editText.getText().toString();
+        editText = (EditText) findViewById(R.id.mitarbeiterId);
+        mitarbeiterId = editText.getText().toString();
         editText = (EditText) findViewById(R.id.pw );
         String pw = editText.getText().toString();
 
-        if(checkLogin(mitarbeiterId, pw)){
-            Intent intent = new Intent(this, ErfassungActivity.class);
-            intent.putExtra("MITARBEITER", mitarbeiterId);
-            startActivity(intent);
-        }
-        else {
-            editText.setText("");
-            TextView errorV =(TextView) findViewById(R.id.errorView);
-            errorV.setVisibility(View.VISIBLE);
-        }
+       checkLogin(mitarbeiterId, pw);
 
+
+    }
+    private void login(){
+        Intent intent = new Intent(this, ErfassungActivity.class);
+        intent.putExtra("MITARBEITER", mitarbeiterId);
+        startActivity(intent);
+    }
+
+    private void displayErr(String errMess){
+        editText.setText("");
+        TextView errorV =(TextView) findViewById(R.id.errorView);
+        errorV.setVisibility(View.VISIBLE);
     }
 
     private boolean checkLogin(final String name, final String pw){
@@ -70,14 +75,13 @@ public class MainActivity extends AppCompatActivity {
                     if (!error) {
                         // user successfully logged in
                         // Create login session
-                        ret = true;}
+                        login();}
 
-             /*else {
+             else {
                 // Error in login. Get the error message
                 String errorMsg = jObj.getString("error_msg");
-                Toast.makeText(getApplicationContext(),
-                        errorMsg, Toast.LENGTH_LONG).show();
-            }*/
+                displayErr(errorMsg);
+            }
         } catch (JSONException e) {
             // JSON error
             e.printStackTrace();
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Map<String, String> getHeaders() throws AuthFailureError {
             HashMap<String, String> headers = new HashMap<String, String>();
-            headers.put("Content-Type", "text/html");
+            headers.put("Content-Type", "application/x-www-form-urlencoded");
             return headers;
         }
 
