@@ -6,6 +6,19 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="MyTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColorSecondary">@android:color/holo_blue_bright</item>
+        <item name="android:textColorPrimary">@android:color/holo_blue_bright</item>
+        <item name="android:colorForeground">@android:color/holo_blue_bright</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_holo_light</item>
+        <item name="android:textColorPrimaryInverse">@color/dim_foreground_disabled_holo_light</item>
+        <item name="android:buttonStyle">@style/BlueButton</item>
+    </style>
+
+    <style name="BlueButton" parent="android:style/Widget.Button">
+        <item name="android:background">@color/holo_primary_dark</item>
     </style>
 
 </resources>

@@ -4,6 +4,12 @@
     </string>
     <string name="posten">Leistung</string>
     <string name="errormes">Invalid password or username</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="service">Leistung:</string>
+    <string name="projectTitle">Projekt:</string>
+    <string name="start">Start</string>
+    <string name="infos">Weitere Infos</string>
     <string-array name="country_arrays">
         <item>Project1</item>
         <item>The</item>
@@ -12,12 +18,12 @@
         <item>names</item>
         <item>to</item>
         <item>choose</item>
-        <item>from</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="posten_array">
         <item>A</item>
         <item>B</item>
-        <item>C</item>
+        <item>1</item>
     </string-array>
 </resources>

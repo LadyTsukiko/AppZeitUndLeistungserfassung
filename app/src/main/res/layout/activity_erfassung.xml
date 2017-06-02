@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:app2=" " xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:weightSum="1">
+              android:layout_height="match_parent" android:weightSum="1"
+              android:gravity="center"
+>
 
     <TextView
-            android:text="Projekt:"
+            android:text="@string/projectTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView"
-            android:textAppearance="@android:style/TextAppearance.Material.Large"/>
+            android:textAppearance="@android:style/TextAppearance.Holo.DialogWindowTitle"
+            android:textAlignment="center"/>
     <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/spinner"
+            android:layout_height="wrap_content" android:id="@+id/Projects"
             android:prompt="@string/project"
             android:entries="@array/country_arrays" android:spinnerMode="dialog"/>
     <TextView
-            android:text="Leistung:"
+            android:text="@string/service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView2"
-            android:textAppearance="@android:style/TextAppearance.Material.Large"/>
+            android:textAppearance="@android:style/TextAppearance.Holo.DialogWindowTitle"
+            android:textAlignment="center"/>
     <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/posten"
+            android:layout_height="wrap_content" android:id="@+id/Services"
             android:prompt="@string/posten"
             android:entries="@array/posten_array" android:spinnerMode="dialog"/>
     <Button
-            android:text="Start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button2"/>
+            android:text="@string/start"
+            android:layout_height="42dp" android:onClick="startClicked" android:id="@+id/startButton"
+            android:layout_width="85dp" android:background="@drawable/mybutton" android:padding="5dp"
+            android:layout_margin="5dp"/>
     <Button
-            android:text="Pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button3"/>
+            android:text="@string/pause"
+            android:layout_width="85dp"
+            android:layout_height="41dp" android:id="@+id/pauseButton" android:onClick="pauseClicked"
+            android:enabled="false"
+            android:background="@drawable/mybutton" android:elevation="0dp" android:padding="5dp"
+            android:layout_margin="5dp"/>
+    <!-- -->
+
     <Button
-            android:text="Stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button4"/>
+            android:text="@string/stop"
+            android:layout_width="85dp"
+            android:layout_height="40dp" android:id="@+id/stopButton" android:onClick="stopClicked"
+            android:enabled="false" android:background="@drawable/mybutton" android:padding="5dp"
+            android:layout_margin="5dp"/>
     <TextClock
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textClock" android:layout_weight="0.14"/>
+            android:layout_height="0dp" android:id="@+id/textClock" android:layout_weight="0.14"
+            android:textAlignment="center"/>
     <Chronometer
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/chronometer2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"/>
+            android:layout_height="wrap_content" android:id="@+id/chronometer"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" android:textAlignment="center"/>
     <TextView
-            android:text="Weitere Infos"
+            android:text="@string/infos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/various"/>
+            android:layout_height="wrap_content" android:id="@+id/various" android:textAlignment="center"/>
 </LinearLayout>
 

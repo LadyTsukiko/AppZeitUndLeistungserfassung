@@ -25,15 +25,14 @@
             android:ems="10"
             android:layout_below="@+id/mitarbeiterId" android:layout_alignRight="@+id/mitarbeiterId"
             android:layout_alignEnd="@+id/mitarbeiterId" android:layout_marginTop="17dp" android:id="@+id/pw"
-            android:text="Password"/>
+            android:hint="******"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="ID"
             android:ems="10"
             android:layout_marginTop="132dp" android:id="@+id/mitarbeiterId"
-            android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+            android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:hint="ID"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_alignParentTop="true"

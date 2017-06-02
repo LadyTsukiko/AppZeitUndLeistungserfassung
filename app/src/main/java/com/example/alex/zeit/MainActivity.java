@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    boolean ret = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.mitarbeiterId).requestFocus();
     }
 
     public  void okClicked (View view){
@@ -54,12 +55,11 @@ public class MainActivity extends AppCompatActivity {
     private void displayErr(String errMess){
         editText.setText("");
         TextView errorV =(TextView) findViewById(R.id.errorView);
+        errorV.setText(errMess);
         errorV.setVisibility(View.VISIBLE);
     }
 
-    private boolean checkLogin(final String name, final String pw){
-
-        ret = false;
+    private void checkLogin(final String name, final String pw){
 
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -94,9 +94,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onErrorResponse(VolleyError error) {
         Log.e(TAG, "Login Error: " + error.getMessage());
-        Toast.makeText(getApplicationContext(),
-        error.getMessage(), Toast.LENGTH_LONG).show();
-        //todo do smth smart
+        displayErr("Keine Verbindung");
         }
         }) {
 
@@ -122,10 +120,5 @@ public class MainActivity extends AppCompatActivity {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
 
-
-
-
-
-        return  ret;
     }
 }
